@@ -1,0 +1,10 @@
+# Default initial positions for myrobot_rpr's ros2_control fake system
+
+initial_positions:
+  join2P: 0.0
+  join4R: 0.0
+  joint1R: 0.0
+  joint3R: 0.0
+  joint5R: 0.0
+  jointgrip1: 0.0
+  jointgrip2: 0.0

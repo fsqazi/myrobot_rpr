@@ -1,0 +1,637 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="myrobot_rpr">
+  
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.0020073 0.00018927 0.038711"
+        rpy="0.0 0.0 0.0" />
+      <mass
+        value="5.7724" />
+      <inertia
+        ixx="0.0"
+        ixy="0.0"
+        ixz="0.0"
+        iyy="0.0"
+        iyz="0.0"
+        izz="0.0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0.0 0.0 0.0"
+        rpy="0.0 0.0 0.0" />
+      <geometry>
+        <mesh
+          filename="file:///home/farhan/mytest_ws/src/myrobot_rpr/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.58824 0.58824 0.63137 1.0" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0.0 0.0 0.0"
+        rpy="0.0 0.0 0.0" />
+      <geometry>
+        <mesh
+          filename="file:///home/farhan/mytest_ws/src/myrobot_rpr/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="link1R">
+    <inertial>
+      <origin
+        xyz="0.020492 -0.054677 0.16798"
+        rpy="0.0 0.0 0.0" />
+      <mass
+        value="2.3424" />
+      <inertia
+        ixx="0.022836"
+        ixy="0.003905"
+        ixz="-0.0032379"
+        iyy="0.013567"
+        iyz="0.0087325"
+        izz="0.016534" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0.0 0.0 0.0"
+        rpy="0.0 0.0 0.0" />
+      <geometry>
+        <mesh
+          filename="file:///home/farhan/mytest_ws/src/myrobot_rpr/meshes/link1R.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.77647 0.75686 0.73725 1.0" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0.0 0.0 0.0"
+        rpy="0.0 0.0 0.0" />
+      <geometry>
+        <mesh
+          filename="file:///home/farhan/mytest_ws/src/myrobot_rpr/meshes/link1R.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint1R"
+    type="revolute">
+    <origin
+      xyz="0.0 0.0 0.0"
+      rpy="0.0 0.0 0.0" />
+    <parent
+      link="base_link" />
+    <child
+      link="link1R" />
+    <axis
+      xyz="0.0 0.0 1.0" />
+    <limit
+      lower="0.0"
+      upper="4.71"
+      effort="300.0"
+      velocity="3.0" />
+  </joint>
+
+<!-- <transmission name="link_1_trans">
+<type>transmission_interface/SimpleTransmission</type>
+<joint name="joint1R">
+<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+</joint>
+<actuator name="link_1_motor">
+<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+<mechanicalReduction>1</mechanicalReduction>
+</actuator>
+</transmission>
+-->
+
+  <link
+    name="link2P">
+    <inertial>
+      <origin
+        xyz="-0.1934 0.0042656 0.024042"
+        rpy="0.0 0.0 0.0" />
+      <mass
+        value="1.2904" />
+      <inertia
+        ixx="0.0011267"
+        ixy="-4.5641E-05"
+        ixz="-0.00034321"
+        iyy="0.015484"
+        iyz="3.6415E-05"
+        izz="0.015383" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0.0 0.0 0.0"
+        rpy="0.0 0.0 0.0" />
+      <geometry>
+        <mesh
+          filename="file:///home/farhan/mytest_ws/src/myrobot_rpr/meshes/link2P.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.38039 0.47843 0.78824 1.0" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0.0 0.0 0.0"
+        rpy="0.0 0.0 0.0" />
+      <geometry>
+        <mesh
+          filename="file:///home/farhan/mytest_ws/src/myrobot_rpr/meshes/link2P.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="join2P"
+    type="prismatic">
+    <origin
+      xyz="-0.095289 0.13025 0.24795"
+      rpy="-1.5708 0.0 1.8874" />
+    <parent
+      link="link1R" />
+    <child
+      link="link2P" />
+    <axis
+      xyz="-1.0 0.0 0.0" />
+    <limit
+      lower="0.0"
+      upper="0.19"
+      effort="250.0"
+      velocity="3.0" />
+  </joint>
+  <!--
+  <transmission name="link_2_trans">
+<type>transmission_interface/SimpleTransmission</type>
+<joint name="join2P">
+<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+</joint>
+<actuator name="link_2_motor">
+<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+<mechanicalReduction>1</mechanicalReduction>
+</actuator>
+</transmission>
+-->
+  <link
+    name="link3R">
+    <inertial>
+      <origin
+        xyz="0.08206 -0.097338 -0.026755"
+        rpy="0.0 0.0 0.0" />
+      <mass
+        value="1.9098" />
+      <inertia
+        ixx="0.0073879"
+        ixy="0.0022803"
+        ixz="0.00014791"
+        iyy="0.0033525"
+        iyz="-3.0177E-05"
+        izz="0.0086259" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0.0 0.0 0.0"
+        rpy="0.0 0.0 0.0" />
+      <geometry>
+        <mesh
+          filename="file:///home/farhan/mytest_ws/src/myrobot_rpr/meshes/link3R.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.38039 0.47843 0.78824 1.0" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0.0 0.0 0.0"
+        rpy="0.0 0.0 0.0" />
+      <geometry>
+        <mesh
+          filename="file:///home/farhan/mytest_ws/src/myrobot_rpr/meshes/link3R.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint3R"
+    type="revolute">
+    <origin
+      xyz="0.0 0.0 0.0"
+      rpy="0.0 0.0 0.0" />
+    <parent
+      link="link2P" />
+    <child
+      link="link3R" />
+    <axis
+      xyz="0.0 0.0 -1.0" />
+    <limit
+      lower="-1.04"
+      upper="1.70"
+      effort="300.0"
+      velocity="3.0" />
+  </joint>
+  <!--
+  <transmission name="link_3_trans">
+<type>transmission_interface/SimpleTransmission</type>
+<joint name="joint3R">
+<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+</joint>
+<actuator name="link_3_motor">
+<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+<mechanicalReduction>1</mechanicalReduction>
+</actuator>
+</transmission>
+-->
+  <link
+    name="link4R">
+    <inertial>
+      <origin
+        xyz="-0.079477 -0.00030616 -0.01"
+        rpy="0.0 0.0 0.0" />
+      <mass
+        value="0.31757" />
+      <inertia
+        ixx="0.00022192"
+        ixy="-4.0258E-07"
+        ixz="-4.0658E-20"
+        iyy="0.00032643"
+        iyz="-2.1176E-21"
+        izz="0.00032932" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0.0 0.0 0.0"
+        rpy="0.0 0.0 0.0" />
+      <geometry>
+        <mesh
+          filename="file:///home/farhan/mytest_ws/src/myrobot_rpr/meshes/link4R.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1.0 1.0 1.0 1.0" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0.0 0.0 0.0"
+        rpy="0.0 0.0 0.0" />
+      <geometry>
+        <mesh
+          filename="file:///home/farhan/mytest_ws/src/myrobot_rpr/meshes/link4R.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="join4R"
+    type="revolute">
+    <origin
+      xyz="0.15374 -0.31769 -0.038327"
+      rpy="3.1354 0.016476 -3.1229" />
+    <parent
+      link="link3R" />
+    <child
+      link="link4R" />
+    <axis
+      xyz="0.0 0.0 -1.0" />
+    <limit
+      lower="-3.14"
+      upper="0.0"
+      effort="300.0"
+      velocity="3.0" />
+  </joint>
+  <!--
+  <transmission name="link_4_trans">
+<type>transmission_interface/SimpleTransmission</type>
+<joint name="join4R">
+<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+</joint>
+<actuator name="link_4_motor">
+<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+<mechanicalReduction>1</mechanicalReduction>
+</actuator>
+</transmission>
+ 
+-->
+  <link
+    name="link5R">
+    <inertial>
+      <origin
+        xyz="-0.017584 0.0014582 0.016342"
+        rpy="0.0 0.0 0.0" />
+      <mass
+        value="0.076424" />
+      <inertia
+        ixx="3.8275E-05"
+        ixy="-3.023E-07"
+        ixz="6.5981E-07"
+        iyy="3.2028E-05"
+        iyz="2.3207E-07"
+        izz="3.9937E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0.0 0.0 0.0"
+        rpy="0.0 0.0 0.0" />
+      <geometry>
+        <mesh
+          filename="file:///home/farhan/mytest_ws/src/myrobot_rpr/meshes/link5R.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1.0 1.0 1.0 1.0" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0.0 0.0 0.0"
+        rpy="0.0 0.0 0.0" />
+      <geometry>
+        <mesh
+          filename="file:///home/farhan/mytest_ws/src/myrobot_rpr/meshes/link5R.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint5R"
+    type="revolute">
+    <origin
+      xyz="-0.14 0.00063358 0.011969"
+      rpy="-3.1219 -1.2378 0.0" />
+    <parent
+      link="link4R" />
+    <child
+      link="link5R" />
+    <axis
+      xyz="-0.32691 -0.014799 -0.94494" />
+    <limit
+      lower="0.0"
+      upper="6.0"
+      effort="250.0"
+      velocity="2.0" />
+  </joint>
+  <!--
+  <transmission name="link_5_trans">
+<type>transmission_interface/SimpleTransmission</type>
+<joint name="joint5R">
+<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+</joint>
+<actuator name="link_5_motor">
+<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+<mechanicalReduction>1</mechanicalReduction>
+</actuator>
+</transmission>
+ -->
+  <link
+    name="grip1">
+    <inertial>
+      <origin
+        xyz="-0.053931 0.012084 0.015"
+        rpy="0.0 0.0 0.0" />
+      <mass
+        value="0.038673" />
+      <inertia
+        ixx="4.5049E-06"
+        ixy="6.0017E-06"
+        ixz="1.0588E-21"
+        iyy="4.5966E-05"
+        iyz="-3.494E-21"
+        izz="4.863E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0.0 0.0 0.0"
+        rpy="0.0 0.0 0.0" />
+      <geometry>
+        <mesh
+          filename="file:///home/farhan/mytest_ws/src/myrobot_rpr/meshes/grip1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1.0 1.0 1.0 1.0" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0.0 0.0 0.0"
+        rpy="0.0 0.0 0.0" />
+      <geometry>
+        <mesh
+          filename="file:///home/farhan/mytest_ws/src/myrobot_rpr/meshes/grip1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="jointgrip1"
+    type="revolute">
+    <origin
+      xyz="-0.010966 -0.040416 -0.0028669"
+      rpy="-0.50635 -1.1894 0.47536" />
+    <parent
+      link="link5R" />
+    <child
+      link="grip1" />
+    <axis
+      xyz="0.0 0.0 -1.0" />
+    <limit
+      lower="-1.57"
+      upper="0.0"
+      effort="100.0"
+      velocity="2.0" />
+  </joint>
+  <!--
+  <transmission name="link_grip1_trans">
+<type>transmission_interface/SimpleTransmission</type>
+<joint name="jointgrip1">
+<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+</joint>
+<actuator name="link_grip1_motor">
+<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+<mechanicalReduction>1</mechanicalReduction>
+</actuator>
+</transmission>
+-->
+  <link
+    name="grip2">
+    <inertial>
+      <origin
+        xyz="0.053679 -0.013157 -0.015"
+        rpy="0.0 0.0 0.0" />
+      <mass
+        value="0.038673" />
+      <inertia
+        ixx="4.7607E-06"
+        ixy="6.8234E-06"
+        ixz="-6.2469E-21"
+        iyy="4.571E-05"
+        iyz="2.9117E-22"
+        izz="4.863E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0.0 0.0 0.0"
+        rpy="0.0 0.0 0.0" />
+      <geometry>
+        <mesh
+          filename="file:///home/farhan/mytest_ws/src/myrobot_rpr/meshes/grip2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1.0 1.0 1.0 1.0" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0.0 0.0 0.0"
+        rpy="0.0 0.0 0.0" />
+      <geometry>
+        <mesh
+          filename="file:///home/farhan/mytest_ws/src/myrobot_rpr/meshes/grip2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="jointgrip2"
+    type="revolute">
+    <origin
+      xyz="-0.0067511 0.041048 -0.0056009"
+      rpy="-3.0818 1.2386 3.1416" />
+    <parent
+      link="link5R" />
+    <child
+      link="grip2" />
+    <axis
+      xyz="0.0 0.0 -1.0" />
+    <limit
+      lower="-1.57"
+      upper="0.0"
+      effort="100.0"
+      velocity="2.0" />
+  </joint>
+  <!--
+    <transmission name="link_grip2_trans">
+<type>transmission_interface/SimpleTransmission</type>
+<joint name="jointgrip2">
+<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+</joint>
+<actuator name="link_grip2_motor">
+<hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+<mechanicalReduction>1</mechanicalReduction>
+</actuator>
+</transmission>
+
+-->
+
+    
+ <!--   <ros2_control name="GazeboSimSystem" type="system">
+   <hardware>
+      <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+    </hardware> 
+    
+    <joint name="joint1R">
+      <command_interface name="position"/>
+      <state_interface name="position">
+      <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="join2P">
+      <command_interface name="position"/>
+      <state_interface name="position">
+      <param name="initial_value">0.0</param>
+      </state_interface>
+
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="joint3R">
+      <command_interface name="position"/>
+      <state_interface name="position">
+      <param name="initial_value">0.0</param>
+      </state_interface>
+
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="join4R">
+      <command_interface name="position"/>
+      <state_interface name="position">
+      <param name="initial_value">0.0</param>
+      </state_interface>
+
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="joint5R">
+      <command_interface name="position"/>
+      <state_interface name="position">
+      <param name="initial_value">0.0</param>
+      </state_interface>
+
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="jointgrip1">
+      <command_interface name="position"/>
+      <state_interface name="position">
+      <param name="initial_value">0.0</param>
+      </state_interface>
+
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="jointgrip2">
+      <command_interface name="position"/>
+      <state_interface name="position">
+      <param name="initial_value">0.0</param>
+      </state_interface>
+
+      <state_interface name="velocity"/>
+    </joint>
+    
+ </ros2_control> -->
+ <!--  
+    <gazebo>
+    <plugin name="gazebo_ros2_control" filename="libgazebo_ros2_control.so">
+    <parameters>$(find my_robot_rpr_moveit_config)/config/ros2_controllers.yaml</parameters>
+    </plugin>
+  </gazebo> -->
+ 
+ <!--
+      <gazebo>
+        <plugin name="gazebo_ros_joint_state_publisher"
+            filename="libgazebo_ros_joint_state_publisher.so">
+            <update_rate>20</update_rate>
+            <joint_name>joint1R</joint_name>
+            <joint_name>join2P</joint_name>
+            <joint_name>joint3R</joint_name>
+            <joint_name>join4R</joint_name>
+            <joint_name>joint5R</joint_name>
+            <joint_name>jointgrip1</joint_name>
+            <joint_name>jointgrip2</joint_name>
+        </plugin>
+    </gazebo>
+     
+        <gazebo>
+
+        <plugin name="gazebo_ros_joint_pose_trajectory"
+
+            filename="libgazebo_ros_joint_pose_trajectory.so">
+
+            <update_rate>2</update_rate>
+
+        </plugin>
+  -->
+</robot>
